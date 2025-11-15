@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brutal Minimalistic Theme */
+    --brutal-bg: 0 0% 100%;
+    --brutal-fg: 0 0% 0%;
+    --brutal-accent: 0 100% 50%;
+    --brutal-border: 0 0% 0%;
+
+    /* shadcn variables */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 0%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  .brutal-border {
+    @apply border-brutal border-brutal-border;
+  }
+
+  .brutal-button {
+    @apply brutal-border bg-brutal-fg text-brutal-bg font-bold uppercase tracking-wide px-6 py-3 hover:bg-brutal-accent hover:text-brutal-fg transition-colors cursor-pointer;
+  }
+
+  .brutal-input {
+    @apply brutal-border bg-brutal-bg text-brutal-fg px-4 py-3 outline-none focus:border-brutal-accent font-mono;
+  }
+
+  .brutal-card {
+    @apply brutal-border bg-brutal-bg p-6;
+  }
+}
